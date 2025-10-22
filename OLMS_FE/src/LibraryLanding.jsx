@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 import "./index.css";
 
 export default function LibraryLanding() {
@@ -54,7 +54,6 @@ export default function LibraryLanding() {
     return;
   }
 
-
   const payload = {
     fullname: signupData.name,
     email: signupData.email.toLowerCase(),
@@ -87,9 +86,9 @@ export default function LibraryLanding() {
   const handleLoginSubmit = async (e) => {
   e.preventDefault();
 
-  // Prepare payload matching backend
+
   const payload = {
-    email: loginData.username, // your backend expects "email"
+    email: loginData.username, 
     password: loginData.password,
   };
 
@@ -105,7 +104,7 @@ export default function LibraryLanding() {
     if (data.success) {
       alert("Login successful!");
       closeModal();
-      navigate("/dashboard"); // redirect to dashboard
+      navigate("/dashboard");
     } else {
       alert("Login failed: " + data.message);
     }
