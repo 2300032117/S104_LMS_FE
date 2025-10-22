@@ -155,62 +155,6 @@ export default function LibraryLanding() {
         </div>
       </section>
 
-      {showLoginModal && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal login-modal" onClick={(e) => e.stopPropagation()}>
-            <h2>Welcome Back</h2>
-            <p className="modal-subtitle">Login to continue exploring</p>
-            <form onSubmit={handleLoginSubmit}>
-              <input
-                type="text"
-                name="username"
-                placeholder="Username or Email"
-                value={loginData.username}
-                onChange={handleLoginChange}
-                required
-              />
-              <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                value={loginData.password}
-                onChange={handleLoginChange}
-                required
-              />
-              <a href="#" className="forgot-password">Forgot Password?</a>
-              <button type="submit" className="submit-btn">Login</button>
-            </form>
-            <p className="switch-auth">
-              Don’t have an account? <span onClick={handleSignupClick}>Sign Up</span>
-            </p>
-          </div>
-        </div>
-      )}
-
-      {showSignupModal && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal signup-modal" onClick={(e) => e.stopPropagation()}>
-            <h2>Create Account</h2>
-            <form onSubmit={handleSignupSubmit}>
-              <input type="text" name="name" placeholder="Full Name" required onChange={handleSignupChange} value={signupData.name} />
-              <input type="text" name="collegeId" placeholder="College ID" required onChange={handleSignupChange} value={signupData.collegeId} />
-              <select name="role" value={signupData.role} onChange={handleSignupChange} required>
-                <option value="student">Student</option>
-                <option value="faculty">Faculty</option>
-                <option value="admin">Admin</option>
-              </select>
-              <input type="email" name="email" placeholder="Email" required onChange={handleSignupChange} value={signupData.email} />
-              <input type="password" name="password" placeholder="Password" required onChange={handleSignupChange} value={signupData.password} />
-              <input type="password" name="confirmPassword" placeholder="Confirm Password" required onChange={handleSignupChange} value={signupData.confirmPassword} />
-              <button type="submit" className="submit-btn">Sign Up</button>
-            </form>
-            <p className="switch-auth">
-              Already have an account? <span onClick={handleLoginClick}>Login</span>
-            </p>
-          </div>
-        </div>
-      )}
-
       <footer className="footer">
         <p>© 2025 Library Management System | All Rights Reserved</p>
       </footer>
